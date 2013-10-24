@@ -48,10 +48,18 @@
 	CGContextAddEllipseInRect(c, r);
 	CGContextSetRGBFillColor(c, 1.0, 0.5467, 0.0, 1.0);	//red, opaque
 	CGContextFillPath(c);
-    CGSize shadow = CGSizeMake(10, -20);
+        
+        CGFloat w = self.bounds.size.width;
+	CGFloat h = self.bounds.size.height;
+	CGContextRef d = UIGraphicsGetCurrentContext();
     
-    CGContextSetShadow(c, shadow, 1);
-    CGContextFillPath(c);
+	
+	CGContextBeginPath(d);
+	CGContextAddRect(d, CGRectMake( 0 * w / 13, 0, w / 13, h/10));
+	
+    
+	CGContextSetRGBFillColor(d, 1.0, 0.0, 0.0, 1.0);
+	CGContextFillPath(d);
 }
 
 @end
