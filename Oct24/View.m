@@ -61,7 +61,7 @@
 	CGContextFillPath(c);
     
     
-    UIImage *image = [UIImage imageNamed: @"patton.jpg"];	//100 by 100
+    /*UIImage *image = [UIImage imageNamed: @"patton.jpg"];	//100 by 100
 	if (image == nil) {
 		NSLog(@"could not find the image");
 		return;
@@ -73,7 +73,15 @@
                                 h - image.size.height
                                 );
     
-	[image drawAtPoint: point];
+	[image drawAtPoint: point];*/
+	NSString *string = @"Don't touch the green!";
+	CGPoint words = CGPointMake(0.0, 0.0);
+	UIFont *font = [UIFont systemFontOfSize: 32.0];
+    
+	NSDictionary *attributes =
+    [NSDictionary dictionaryWithObject: font forKey: NSFontAttributeName];
+    
+	[string drawAtPoint: words withAttributes: attributes];
 }
 
 @end
